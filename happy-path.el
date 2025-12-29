@@ -88,7 +88,21 @@
                       "=" @happy-path-dim)
           consequence: (_) @happy-path-dim
           alternative: (_))
-         (:match "\\`Err\\'" @_type)))))
+         (:match "\\`Err\\'" @_type))))
+
+    (log-macros
+     . (;; Simple: info!, warn!, debug!, error!, trace!, println!, dbg!
+        ((macro_invocation
+          macro: (identifier) @_macro)
+         @happy-path-dim
+         (:match "\\`\\(info\\|warn\\|debug\\|error\\|trace\\|println\\|dbg\\)\\'" @_macro))
+
+        ;; Scoped: log::info!, tracing::warn!, etc.
+        ((macro_invocation
+          macro: (scoped_identifier
+                  name: (identifier) @_macro))
+         @happy-path-dim
+         (:match "\\`\\(info\\|warn\\|debug\\|error\\|trace\\|println\\|dbg\\)\\'" @_macro)))))
   "Stores rust queries.
 Stores in an alist, give each query a name for easy access.")
 
@@ -98,7 +112,8 @@ Stores in an alist, give each query a name for easy access.")
                :language 'rust
                :feature 'happy-path-dim
                (append (alist-get 'err-branch happy-path-rust-queries)
-                       (alist-get 'if-let-err happy-path-rust-queries)))))
+                       (alist-get 'if-let-err happy-path-rust-queries)
+                       (alist-get 'log-macros happy-path-rust-queries)))))
   "Alist mapping major mode symbol to SETTINGS.
 
 SETTINGS is the return value of ‘treesit-font-lock-rules’. When calling
