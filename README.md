@@ -3,8 +3,10 @@
 Happy-path-mode dims error handling, logging, etc, so you can focus on
 the main flow of the program.
 
-![Program source with normal highlighting](./screenshots/before.png)
-![Program source with non-main-flow dimmed](./screenshots/after.png)
+<p float="left">
+  <img src="./screenshots/before.png" width="200" alt="Program source with normal highlighting" />
+  <img src="./screenshots/after.png" width="200" alt="Program source with non-main-flow dimmed"/>
+</p>
 
 happy-path.el supports any language that has a tree-sitter grammar.
 Right now there’s only builtin support for Rust.
