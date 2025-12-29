@@ -4,8 +4,8 @@ Happy-path-mode dims error handling, logging, etc, so you can focus on
 the main flow of the program.
 
 <p float="left">
-  <img src="./screenshots/before.png" width="200" alt="Program source with normal highlighting" />
-  <img src="./screenshots/after.png" width="200" alt="Program source with non-main-flow dimmed"/>
+  <img src="./screenshots/before.png" width="400" alt="Program source with normal highlighting" />
+  <img src="./screenshots/after.png" width="400" alt="Program source with non-main-flow dimmed"/>
 </p>
 
 happy-path.el supports any language that has a tree-sitter grammar.
