@@ -20,3 +20,7 @@ Use `happy-path-mode` to enable dimming.
 The dimmed text is displayed in `happy-path-dim` face, which inherits
 from `shadow` face. You can customize it to be even more subdued. The
 screenshot uses #CCCCCC for foreground color.
+
+## AI disclosure
+
+Claude code is used for creating queries and the test files.
